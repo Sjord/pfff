@@ -46,6 +46,7 @@ type t =
   | Ruby
   | Csharp
   | PHP
+  | Spacegrep
 (*e: type [[Lang.t]] *)
 
 (*****************************************************************************)
@@ -76,6 +77,9 @@ let list_of_lang = [
     "rb", Ruby;
     "cs", Csharp;
     "php", PHP;
+
+    "spacegrep", Spacegrep;
+    "generic", Spacegrep; (* user-facing alias *)
   ]
 (*e: constant [[Lang.list_of_lang]] *)
 
@@ -123,6 +127,7 @@ let string_of_lang = function
   | Ruby -> "Ruby"
   | Csharp -> "C#"
   | PHP -> "PHP"
+  | Spacegrep -> "generic"
 (*e: function [[Lang.string_of_lang]] *)
 
 (*s: function [[Lang.ext_of_lang]] *)
@@ -139,6 +144,7 @@ let ext_of_lang = function
   | Ruby -> ["rb"]
   | Csharp -> ["cs"]
   | PHP -> ["php"]
+  | Spacegrep -> []
 (*e: function [[Lang.ext_of_lang]] *)
 
 (*s: function [[Lang.find_source]] *)
